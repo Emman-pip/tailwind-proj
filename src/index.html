@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tailwind try</title>
     <link rel="stylesheet" href="./output.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 </head>
+
 <body>
-    <h1 class="text-3xl font-bold underline">hello</h1>
-    <div class="container p-16 flex justify-center items-center">
-        <div class="another-item bg-stone-500 p-10 rounded-xl hover:bg-stone-700 cursor-pointer">
-            <h1 class="text-center text-white">hello ulit</h1>
+    <nav class="bg-slate-300 py-3 px-3">
+        <div class="content w-auto flex justify-between items-center">
+            <div>
+                <div class="brand  items-center flex">
+                    <h1 class=" font-sans font-bold">SOMELOGO</h1>
+                </div>
+            </div>
+            <div class="md:flex">
+                <div id="links"
+                    class="links duration-500 -z-10 md:bg-transparent md:static absolute w-full left-0 bg-slate-300 top-[-100%]">
+                    <div class="flex md:gap-4 md:flex-row md:p-0 p-5 flex-col left-0 w-full ">
+                        <a href="#" class="text-black text-lg">link1</a>
+                        <a href="#" class="text-black text-lg">link2</a>
+                        <a href="#" class="text-black text-lg">link3</a>
+                    </div>
+                </div>
+                <ion-icon name="menu" aria-hidden="true" class="w-10 h-10 md:hidden"></ion-icon>
+            </div>
+
         </div>
-    </div>
+    </nav>
+    <script>
+        const btn = document.querySelector("ion-icon");
+        const target = document.querySelector("#links")
+        btn.addEventListener("click", () => {
+            target.classList.toggle("top-20")
+            btn.name = (btn.name == "menu") ? "close" : "menu"
+            console.log(target.name)
+        })
+    </script>
 </body>
+
 </html>
